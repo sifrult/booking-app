@@ -15,9 +15,11 @@ export default function Header() {
                 <div>
                     Anywhere
                 </div>
+                <div>|</div>
                 <div>
                     Any week
                 </div>
+                <div>|</div>
                 <div>
                     Add guests
                 </div>
