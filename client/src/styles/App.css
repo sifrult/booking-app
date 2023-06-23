@@ -1,0 +1,9 @@
+.flexCenter {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.searchSpace {
+    width: 25%;
+}
