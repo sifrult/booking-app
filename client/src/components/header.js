@@ -1,34 +1,35 @@
 import React from 'react';
-import { CiLocationArrow1, CiMenuBurger, CiUser } from "react-icons/ci";
+import { CiLocationArrow1, CiMenuBurger, CiUser, CiSearch, CiSliderHorizontal } from "react-icons/ci";
 
 export default function Header() {
 
     return (
 
         <header className='flexCenter'>
-            <div>
+            <div className='desktopOnly'>
                 <CiLocationArrow1 />
                 airbna
             </div>
 
-            <div className='flexCenter searchSpace'>
+            <div className= 'flexCenter mobileSearchSpace mobileOnly'>
+                <div>< CiSearch /></div>
                 <div>
-                    Anywhere
+                    <p>Anywhere</p>
+                    <p>Any week - Add guests</p>
                 </div>
-                <div>|</div>
-                <div>
-                    Any week
-                </div>
-                <div>|</div>
-                <div>
-                    Add guests
-                </div>
-                <button>
-                    Search
-                </button>
+                <div className='filterBtn'><CiSliderHorizontal /></div>
             </div>
 
-            <div>
+            <div className='flexCenter searchSpace desktopOnly'>
+                <div>Anywhere</div>
+                <div>|</div>
+                <div>Any week</div>
+                <div>|</div>
+                <div>Add guests</div>
+                <button>Search</button>
+            </div>
+
+            <div className='desktopOnly'>
                 <CiMenuBurger />
                 <CiUser />
             </div>
