@@ -1,3 +1,4 @@
+/* Nav bar */
 header {
     padding: 10px;
 }
@@ -27,12 +28,31 @@ header {
     border-radius: 50%;
 }
 
-@media (max-width: 600px) {
+/* Footer */
+.mobileFooter {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: pink;
+    transition: transform 0.3s ease;
+}
 
+.mobileFooter.visible {
+    transform: translateY(0);
+}
+
+.mobileFooter.hidden {
+    transform: translateY(100%);
+}
+
+/* Media */
+@media (max-width: 600px) {
     .desktopOnly {
-      display: none;
+        display: none;
     }
-  }
+}
 
 @media (min-width: 601px) {
     .mobileOnly {

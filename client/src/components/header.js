@@ -1,5 +1,9 @@
 import React from 'react';
-import { CiLocationArrow1, CiMenuBurger, CiUser, CiSearch, CiSliderHorizontal } from "react-icons/ci";
+import { CiLocationArrow1,
+    CiMenuBurger,
+    CiUser,
+    CiSearch,
+    CiSliderHorizontal } from "react-icons/ci";
 import { Link } from 'react-router-dom';
 
 export default function Header() {
@@ -12,7 +16,7 @@ export default function Header() {
                 airbna
             </div>
 
-            <div className= 'flexCenter mobileSearchSpace mobileOnly'>
+            <div className='flexCenter mobileSearchSpace mobileOnly'>
                 <div>< CiSearch /></div>
                 <div>
                     <p>Anywhere</p>
@@ -30,12 +34,13 @@ export default function Header() {
                 <button>Search</button>
             </div>
 
-            <Link to ='/login'>
-            <div className='desktopOnly'>
-                <CiMenuBurger />
-                <CiUser />
-            </div>
-</Link>
+            <Link to='/login'>
+                <div className='desktopOnly'>
+                    <CiMenuBurger />
+                    <CiUser />
+                </div>
+            </Link>
+
         </header>
 
     );
