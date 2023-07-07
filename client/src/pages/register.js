@@ -21,7 +21,11 @@ export default function Register() {
         //   alert('Registration failed. Please try again later');
         // }
         ev.preventDefault();
-        axios.get('http://localhost:4000/test')
+        axios.post('/register', {
+            name,
+            email,
+            password
+        })
       }
 
 

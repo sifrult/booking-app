@@ -5,6 +5,9 @@ import Login from './pages/loginPage';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Layout from './pages/Layout';
 import Register from './pages/register';
+import axios from 'axios';
+
+axios.defaults.baseURL='http://localhost:4000'
 
 export default function App() {
     return (
