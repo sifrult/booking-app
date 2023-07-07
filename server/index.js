@@ -5,8 +5,10 @@ const User = require('./models/User')
 const app = express();
 require('dotenv').config();
 const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 
 const bcryptSalt = bcrypt.genSaltSync(10)
+const jwtSecret = 'sdfasfwtgafs'
 
 app.use(express.json())
 
@@ -35,11 +37,22 @@ app.post('/register', async (req, res) => {
   }
 })
 
-app.post('/login', async (req,res) => {
-  const {email,password} = req.body;
-  const userData = await User.findOne({email});
+app.post('/login', async (req, res) => {
+  const { email, password } = req.body;
+  const userData = await User.findOne({ email });
   if (userData) {
-    res.json('user found')
+    const passOk = bcrypt.compareSync(password, userData.password)
+    if (passOk) {
+      jwt.sign({
+        email: userData.email,
+        id: userData._id
+      }, jwtSecret, {}, (err, token) => {
+        if (err) throw err;
+        res.cookie('token', token).json('password ok')
+      });
+    } else {
+      res.status(422).json('password not ok');
+    }
   } else {
     res.json('not found');
   }
