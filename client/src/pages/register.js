@@ -19,7 +19,7 @@ export default function Register() {
             });
             alert('Registration successful. Now you can log in.')
         } catch (e) {
-            alert('Registration failed.')
+            alert('Registration failed. Email already in use.')
         }
     }
 

@@ -33,7 +33,16 @@ app.post('/register', async (req, res) => {
   } catch (e) {
     res.status(422).json(e)
   }
-
 })
+
+app.post('/login', async (req,res) => {
+  const {email,password} = req.body;
+  const userData = await User.findOne({email});
+  if (userData) {
+    res.json('user found')
+  } else {
+    res.json('not found');
+  }
+});
 
 app.listen(4000);
