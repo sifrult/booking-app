@@ -1,12 +1,17 @@
-import React from 'react';
-import { CiLocationArrow1,
+import React, { useContext } from 'react';
+import {
+    CiLocationArrow1,
     CiMenuBurger,
     CiUser,
     CiSearch,
-    CiSliderHorizontal } from "react-icons/ci";
+    CiSliderHorizontal
+} from "react-icons/ci";
 import { Link } from 'react-router-dom';
+import { UserContext } from './userContext';
 
 export default function Header() {
+
+    const { user } = useContext(UserContext)
 
     return (
 
@@ -38,6 +43,11 @@ export default function Header() {
                 <div className='desktopOnly'>
                     <CiMenuBurger />
                     <CiUser />
+                    {!!user && (
+                        <div>
+                            {user.name}
+                        </div>
+                    )}
                 </div>
             </Link>
 
