@@ -5,6 +5,7 @@ import Login from './pages/login';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Layout from './pages/Layout';
 import Register from './pages/register';
+import Profile from './pages/profile';
 import axios from 'axios';
 import { UserContextProvider } from './components/userContext';
 
@@ -20,6 +21,7 @@ export default function App() {
                         <Route index element={<Home />} />
                         <Route path='login' element={<Login />} />
                         <Route path='register' element={<Register />} />
+                        <Route path='profile' element={<Profile />} />
                     </Route>
                 </Routes>
             </Router>
