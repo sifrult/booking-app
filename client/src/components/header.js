@@ -39,7 +39,7 @@ export default function Header() {
                 <button>Search</button>
             </div>
 
-            <Link to={user?'/profile':'/login'}>
+            <Link to={user?'/account':'/login'}>
                 <div className='desktopOnly'>
                     <CiMenuBurger />
                     <CiUser />
