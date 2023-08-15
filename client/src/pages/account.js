@@ -1,7 +1,7 @@
 import React from 'react';
 import { useContext } from 'react';
 import { UserContext } from '../components/userContext';
-import { Navigate } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 
 export default function Account() {
   const { ready, user } = useContext(UserContext);
@@ -17,7 +17,13 @@ export default function Account() {
 
   return (
     <div>
-      Account for {user?.name}
+      <nav>
+        <Link to={'/account'}>Profile</Link>
+        <br />
+        <Link to={'/account/bookings'}>My bookings</Link>
+        <br />
+        <Link to={'/account/places'}>My places</Link>
+      </nav>
     </div>
   )
 }
