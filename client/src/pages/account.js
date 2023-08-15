@@ -1,10 +1,13 @@
 import React from 'react';
-import { useContext } from 'react';
+import { useContext, useState } from "react";
 import { UserContext } from '../components/userContext';
-import { Link, Navigate } from 'react-router-dom';
+import { Link, Navigate, useNavigate  } from 'react-router-dom';
+import axios from 'axios';
 
 export default function Account() {
-  const { ready, user } = useContext(UserContext);
+  const navigate = useNavigate();
+  const [redirect, setRedirect] = useState(null);
+  const { ready, user, setUser } = useContext(UserContext);
 
   if (!ready) {
     return 'Loading...'
@@ -14,6 +17,11 @@ export default function Account() {
     return <Navigate to={'/Login'} />
   }
 
+  async function logout() {
+    await axios.post('/logout');
+    navigate('/', { replace: true });
+    setUser(null);
+  }
 
   return (
     <div>
@@ -24,6 +32,11 @@ export default function Account() {
         <br />
         <Link to={'/account/places'}>My places</Link>
       </nav>
+      <div>
+        Logged in as {user.name} ({user.email})
+        <br />
+        <button onClick={logout}>Logout</button>
+      </div>
     </div>
   )
 }
