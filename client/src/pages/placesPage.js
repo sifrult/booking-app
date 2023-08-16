@@ -1,19 +1,16 @@
 import React from 'react';
+import { CiCirclePlus } from "react-icons/ci";
 import { Link } from 'react-router-dom';
+import ProfileNav from '../components/profileNav';
 
 export default function PlacesPage() {
 
     return (
         <div>
-            <nav>
-                <Link to={'/account'}>Profile</Link>
-                <br />
-                <Link to={'/account/bookings'}>My bookings</Link>
-                <br />
-                <Link to={'/account/places'}>My places</Link>
-            </nav>
+            <ProfileNav />
+            <br />
             <div>
-                <Link to={'/account/places/new'}>Add new place</Link>
+                <Link to={'/account/places/new'}><CiCirclePlus />Add new place</Link>
             </div>
         </div>
     )

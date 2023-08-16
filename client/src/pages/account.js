@@ -2,6 +2,7 @@ import React from 'react';
 import { useContext } from "react";
 import { UserContext } from '../components/userContext';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
+import ProfileNav from '../components/profileNav';
 import axios from 'axios';
 
 export default function Account() {
@@ -24,13 +25,8 @@ export default function Account() {
 
   return (
     <div>
-      <nav>
-        <Link to={'/account'}>Profile</Link>
-        <br />
-        <Link to={'/account/bookings'}>My bookings</Link>
-        <br />
-        <Link to={'/account/places'}>My places</Link>
-      </nav>
+      <ProfileNav />
+      <br />
       <div>
         Logged in as {user.name} ({user.email})
         <br />
