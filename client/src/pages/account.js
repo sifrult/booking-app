@@ -1,12 +1,11 @@
 import React from 'react';
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { UserContext } from '../components/userContext';
-import { Link, Navigate, useNavigate  } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 export default function Account() {
   const navigate = useNavigate();
-  const [redirect, setRedirect] = useState(null);
   const { ready, user, setUser } = useContext(UserContext);
 
   if (!ready) {

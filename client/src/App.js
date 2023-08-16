@@ -8,6 +8,7 @@ import Register from './pages/register';
 import Account from './pages/account';
 import BookingPage from './pages/bookingPage';
 import PlacesPage from './pages/placesPage';
+import PlacesForm from './pages/placesFormPage';
 import axios from 'axios';
 import { UserContextProvider } from './components/userContext';
 
@@ -26,6 +27,7 @@ export default function App() {
                         <Route path='account' element={<Account />} />
                         <Route path='account/bookings' element={<BookingPage />} />
                         <Route path='account/places' element={<PlacesPage />} />
+                        <Route path='account/places/new' element={<PlacesForm />} />
                     </Route>
                 </Routes>
             </Router>

@@ -12,6 +12,9 @@ export default function PlacesPage() {
                 <br />
                 <Link to={'/account/places'}>My places</Link>
             </nav>
+            <div>
+                <Link to={'/account/places/new'}>Add new place</Link>
+            </div>
         </div>
     )
 }
