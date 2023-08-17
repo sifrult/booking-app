@@ -26,6 +26,9 @@ const PlaceSchema = new Schema({
         type: [String],
         required: true,
     },
+    extraInfo: {
+        type: String
+    },
     checkIn: {
         type: Date,
     },
